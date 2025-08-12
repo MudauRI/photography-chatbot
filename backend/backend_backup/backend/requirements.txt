@@ -1,0 +1,15 @@
+# Core Dependencies
+flask==3.0.2
+gunicorn==21.2.0
+
+# API Support
+flask-cors==4.0.0
+python-dotenv==1.0.0
+
+# Production Optimization
+whitenoise==6.6.0
+
+# Optional Image Processing (uncomment if needed)
+# pillow==10.2.0
+# numpy==2.0.0
+# opencv-python-headless==4.9.0.80
