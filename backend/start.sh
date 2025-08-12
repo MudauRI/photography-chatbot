@@ -1,4 +1,18 @@
+#!/bin/bash
 
+# Explicitly change to backend directory
+cd "$(dirname "$0")" || exit 1
+
+# Install requirements (Render will have done this already, but just in case)
+pip install -r requirements.txt
+
+# Start Gunicorn with production settings
+exec gunicorn --bind 0.0.0.0:$PORT \
+    --workers 2 \  # Reduced for Render's free tier
+    --timeout 120 \
+    --access-logfile - \
+    --error-logfile - \
+    app:app
 
 #!/bin/bash
 
