@@ -13,3 +13,8 @@ pip install -r ./requirements.txt
 exec gunicorn --bind 0.0.0.0:$PORT \
     --workers 4 \
     app:app
+#!/bin/bash
+
+# Install headless OpenCV first (special handling)
+pip install --no-deps opencv-python-headless==4.9.0.80
+
