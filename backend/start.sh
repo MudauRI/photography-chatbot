@@ -1,21 +1,15 @@
 #!/bin/bash
 
-# Activate virtual environment (if exists)
-if [ -d "venv" ]; then
-    source venv/bin/activate
-fi
+# Navigate to backend directory
+cd "$(dirname "$0")" || exit 1
 
-# Install dependencies from requirements.txt
-pip install -r requirements.txt
+# Upgrade pip first
+python -m pip install --upgrade pip
 
-# Set default port if not specified
-PORT=${PORT:-5000}
+# Install requirements with full path
+pip install -r ./requirements.txt
 
-# Start Gunicorn with optimal settings
+# Start Gunicorn
 exec gunicorn --bind 0.0.0.0:$PORT \
     --workers 4 \
-    --threads 2 \
-    --timeout 120 \
-    --access-logfile - \
-    --error-logfile - \
     app:app
