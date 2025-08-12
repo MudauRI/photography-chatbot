@@ -1,15 +1,14 @@
-services:
-  - type: web
-    name: photography-chatbot
-    runtime: python
-    buildCommand: pip install -r backend/requirements.txt
-    startCommand: ./backend/start.sh
-    envVars:
-      - key: PYTHON_VERSION
-        value: 3.9.7
-      - key: UPLOAD_FOLDER
-        value: /var/data/uploads
-        
-        envVars:
-  - key: PYTHON_VERSION
-    value: 3.11.8  # Use a version known to work with Pillow 9.5.0
+# Core Flask
+flask==2.3.2
+gunicorn==20.1.0
+
+# Image Processing (Lightweight)
+pillow==10.1.0
+numpy==1.26.4
+
+# API Support
+flask-cors==4.0.0
+python-dotenv==1.0.0
+
+# Production Optimization
+whitenoise==6.6.0
