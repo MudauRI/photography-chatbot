@@ -12,3 +12,4 @@ python-dotenv==1.0.0
 
 # Production Optimization
 whitenoise==6.6.0
+buildCommand: pip install -r backend/requirements.txt
