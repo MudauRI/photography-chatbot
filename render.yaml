@@ -16,3 +16,7 @@ buildCommand: pip install -r backend/requirements.txt
 opencv-python-headless==4.9.0.80  # Headless version (no GUI dependencies)
 numpy==1.26.4  # Required for OpenCV
 
+buildCommand: |
+  pip install --upgrade pip
+  pip install --no-deps opencv-python-headless==4.9.0.80
+  pip install -r backend/requirements.txt
