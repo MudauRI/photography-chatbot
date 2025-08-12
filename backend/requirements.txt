@@ -1,4 +1,18 @@
-# Core Flask
+# Core Requirements
+flask==2.3.2
+gunicorn==20.1.0
+
+# Use Pillow 10+ for Python 3.13 compatibility
+pillow==10.1.0  # Updated version
+numpy==1.26.4   # Updated for compatibility
+
+# Only include opencv if absolutely needed
+# opencv-python-headless==4.9.0.80  # Uncomment if required
+
+# API Support
+flask-cors==4.0.0
+python-dotenv==1.0.0
+whitenoise==6.6.0# Core Flask
 flask==2.3.2
 gunicorn==20.1.0
 
