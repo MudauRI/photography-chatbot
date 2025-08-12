@@ -11,6 +11,14 @@ import uuid
 app = Flask(__name__, static_folder='../frontend')
 CORS(app)
 
+def analyze_image(image_path):
+    from PIL import Image
+    img = Image.open(image_path)
+    return {
+        "dimensions": f"{img.width}x{img.height}",
+        "format": img.format
+    }
+
 # Configuration
 UPLOAD_FOLDER = 'uploads'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
@@ -137,3 +145,4 @@ def ai_analysis():
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port, debug=False)
+
