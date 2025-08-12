@@ -9,3 +9,7 @@ services:
         value: 3.9.7
       - key: UPLOAD_FOLDER
         value: /var/data/uploads
+        
+        envVars:
+  - key: PYTHON_VERSION
+    value: 3.11.8  # Use a version known to work with Pillow 9.5.0
