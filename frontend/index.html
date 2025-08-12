@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Photography Assistant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fas fa-camera-retro"></i> Photo Assistant</h2>
+                <p>Your AI-powered photography mentor</p>
+            </div>
+            
+            <div class="menu-section">
+                <h3>Quick Tools</h3>
+                <button class="menu-btn" id="settings-helper">
+                    <i class="fas fa-sliders-h"></i> Settings Helper
+                </button>
+                <button class="menu-btn" id="composition-guide">
+                    <i class="fas fa-th"></i> Composition Guide
+                </button>
+                <button class="menu-btn" id="lighting-analyzer">
+                    <i class="fas fa-sun"></i> Lighting Analyzer
+                </button>
+            </div>
+            
+            <div class="menu-section">
+                <h3>Learning Resources</h3>
+                <button class="menu-btn">
+                    <i class="fas fa-graduation-cap"></i> Photography 101
+                </button>
+                <button class="menu-btn">
+                    <i class="fas fa-star"></i> Advanced Techniques
+                </button>
+            </div>
+            
+            <div class="user-section">
+                <div class="user-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="user-info">
+                    <strong>Photographer</strong>
+                    <small>Free Plan</small>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="chat-header">
+                <div class="header-left">
+                    <h1>Photo Analysis</h1>
+                    <p>Get expert feedback on your photos</p>
+                </div>
+                <div class="header-actions">
+                    <button class="icon-btn" id="upload-btn">
+                        <i class="fas fa-cloud-upload-alt"></i> Upload Photo
+                    </button>
+                    <input type="file" id="file-input" accept="image/*" style="display: none;">
+                </div>
+            </div>
+            
+            <div class="chat-container">
+                <div class="chat-window" id="chat-window">
+                    <!-- Messages will appear here -->
+                </div>
+                
+                <div class="input-area">
+                    <div class="input-tools">
+                        <button class="tool-btn" title="Attach Photo">
+                            <i class="fas fa-image"></i>
+                        </button>
+                        <button class="tool-btn" title="Suggest Settings">
+                            <i class="fas fa-cog"></i>
+                        </button>
+                    </div>
+                    <input type="text" id="user-input" placeholder="Ask about photography...">
+                    <button id="send-btn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="photo-analysis" id="photo-analysis">
+                <!-- Photo analysis results will appear here -->
+            </div>
+        </div>
+        
+        <div class="right-sidebar" id="right-sidebar">
+            <div class="sidebar-tab" id="settings-tab">
+                <h3><i class="fas fa-sliders-h"></i> Recommended Settings</h3>
+                <div class="settings-presets">
+                    <div class="preset-card" data-scenario="portrait">
+                        <i class="fas fa-user"></i>
+                        <span>Portrait</span>
+                    </div>
+                    <div class="preset-card" data-scenario="landscape">
+                        <i class="fas fa-mountain"></i>
+                        <span>Landscape</span>
+                    </div>
+                    <!-- More presets -->
+                </div>
+                
+                <div class="settings-details" id="settings-details">
+                    <h4>Current Settings</h4>
+                    <div class="setting-param">
+                        <label>Aperture</label>
+                        <select id="aperture-select">
+                            <option>f/1.4</option>
+                            <!-- More options -->
+                        </select>
+                    </div>
+                    <!-- More settings controls -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modals -->
+    <div class="modal" id="upload-modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Upload Photo for Analysis</h2>
+            <div class="upload-area" id="drop-zone">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <p>Drag & drop your photo here</p>
+                <p>or</p>
+                <button class="browse-btn">Browse Files</button>
+            </div>
+            <div class="preview-area" id="preview-area"></div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

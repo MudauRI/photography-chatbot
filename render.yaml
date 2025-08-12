@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: photography-chatbot
+    runtime: python
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: ./backend/start.sh
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.7
+      - key: UPLOAD_FOLDER
+        value: /var/data/uploads
