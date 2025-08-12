@@ -1,4 +1,4 @@
-# Core Dependencies
+# Core
 flask==3.0.2
 gunicorn==21.2.0
 
@@ -6,8 +6,5 @@ gunicorn==21.2.0
 flask-cors==4.0.0
 python-dotenv==1.0.0
 
-# Production Optimization
+# Static Files
 whitenoise==6.6.0
-
-# Optional Image Processing (uncomment if needed)
-# opencv-python-headless==4.9.0.80
