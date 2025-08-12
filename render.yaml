@@ -13,3 +13,6 @@ python-dotenv==1.0.0
 # Production Optimization
 whitenoise==6.6.0
 buildCommand: pip install -r backend/requirements.txt
+opencv-python-headless==4.9.0.80  # Headless version (no GUI dependencies)
+numpy==1.26.4  # Required for OpenCV
+
